@@ -1,4 +1,4 @@
-import s from "./RocTest.module.css";
+import s from "./RocChildTest.module.css";
 
 type Props = {
   message?: string;
