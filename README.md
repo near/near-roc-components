@@ -2,9 +2,11 @@
 
 This is a repository that holds the source code of all React on Chain components that are published to the main `near` account.
 
-When the `main` branch is updated, all components are automatically published to the `near` account under the Social DB `component_alpha` namespace. You can view your RoC component in production by visiting `https://roc.near.dev/{accountId}/{componentName}`. EG: https://roc.near.dev/near/RocTest
+When the `main` branch is updated, all components are automatically published to the `near` account under the Social DB `component_alpha` namespace.
 
-These components are currently NOT visible on our NEAR Discovery gateway: https://near.org
+You can view your RoC component in production by visiting `https://roc.near.dev/{accountId}/{componentName}`. EG: https://roc.near.dev/near/RocTest
+
+_NOTE: These components are currently NOT visible on our NEAR Discovery gateway: https://near.org_
 
 ## Local Development
 
