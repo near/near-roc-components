@@ -1,0 +1,27 @@
+name: Deploy Components to Mainnet
+on:
+  push:
+    branches: [main]
+concurrency: main # do not allow parallel execution
+jobs:
+  deploy-components:
+    runs-on: ubuntu-latest
+    name: Deploy components to social.near (mainnet)
+    env:
+      BOS_COMPONENTS_NAMESPACE: ${{ vars.BOS_COMPONENTS_NAMESPACE }}
+      BOS_DEPLOY_ACCOUNT_ID: ${{ vars.NEAR_SOCIAL_DEPLOY_ID }}
+      BOS_SIGNER_ACCOUNT_ID: ${{ vars.NEAR_SOCIAL_ACCOUNT_ID }}
+      BOS_SIGNER_PUBLIC_KEY: ${{ vars.NEAR_SOCIAL_ACCOUNT_PUBLIC_KEY }}
+      BOS_SIGNER_PRIVATE_KEY: ${{ secrets.NEAR_SOCIAL_ACCOUNT_PRIVATE_KEY }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install BOS CLI
+        run: |
+          wget https://github.com/mpeterdev/bos-cli-rs/releases/download/v1/bos && chmod +x bos
+
+      - name: Deploy Components
+        run: |
+          ./bos components --social-db-folder "$BOS_COMPONENTS_NAMESPACE" deploy "$BOS_DEPLOY_ACCOUNT_ID" sign-as "$BOS_SIGNER_ACCOUNT_ID" network-config mainnet sign-with-plaintext-private-key --signer-public-key "$BOS_SIGNER_PUBLIC_KEY" --signer-private-key "$BOS_SIGNER_PRIVATE_KEY" send

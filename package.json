@@ -1,0 +1,21 @@
+{
+  "name": "near-roc-components",
+  "version": "0.1.0",
+  "description": "This is a repository that holds the source code of all React on Chain components that the team maintains for near.org.",
+  "scripts": {
+    "dev": "npm run serve",
+    "prettier": "prettier --check --log-level warn 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "prettier:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "prepare": "is-ci || husky",
+    "serve": "bos-loader -w -c"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@types/react": "^18.2.34",
+    "husky": "^9.0.11",
+    "is-ci": "^3.0.1",
+    "prettier": "^3.1.0"
+  }
+}
