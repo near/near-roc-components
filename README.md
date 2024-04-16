@@ -1,6 +1,6 @@
 # Near RoC Components
 
-This is a repository that holds the source code of all React on Chain components that the team maintains for near.org.
+This is a repository that holds the source code of all React on Chain components that are published to the main `near` account.
 
 When the `main` branch is updated, all components are automatically published to the `near` account under the Social DB `component_alpha` namespace. You can view your RoC component in production by visiting `https://roc.near.dev/{accountId}/{componentName}`. EG: https://roc.near.dev/near/RocTest
 
