@@ -46,6 +46,10 @@ This will kick off a [bos-loader](https://github.com/near/bos-loader) command to
 
 **8.** Check out the source code of `src/RocTest.tsx` and `src/RocChildTest.tsx` to get an example of the boilerplate that should be used when creating a new component. For further documentation, please refer to the [Official RoC Docs](https://roc-docs.near.dev/).
 
+## Hot Reload
+
+Coming soon!
+
 ## Contributing
 
 TODO
