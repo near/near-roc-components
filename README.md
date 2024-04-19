@@ -29,8 +29,7 @@ This will kick off a [bos-loader](https://github.com/near/bos-loader) command to
 ```bash
 cd ~/wherever
 git clone git@github.com:near/bos-web-engine.git
-cd bos-web-engine/apps/web
-cd ..
+cd bos-web-engine
 pnpm i
 pnpm build
 ```
