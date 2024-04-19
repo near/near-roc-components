@@ -30,7 +30,9 @@ This will kick off a [bos-loader](https://github.com/near/bos-loader) command to
 cd ~/wherever
 git clone git@github.com:near/bos-web-engine.git
 cd bos-web-engine/apps/web
+cd ..
 pnpm i
+pnpm build
 ```
 
 Then we need to run the `dev:components` to start up the gateway server and [hot reload server](https://github.com/near/bos-web-engine/blob/main/packages/hot-reload-server/README.md):
