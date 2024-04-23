@@ -28,13 +28,15 @@ This will kick off a [bos-loader](https://github.com/near/bos-loader) command to
 
 ```bash
 cd ~/wherever
-git clone git@github.com:near/bos-web-engine.git
-cd bos-web-engine
+git clone git@github.com:near/react-on-chain.git
+cd react-on-chain
 pnpm i
+pnpm turbo run build --filter=ui --filter=social-db 
+pnpm turbo run build --filter=application
 pnpm build
 ```
 
-Then we need to run the `dev:components` to start up the gateway server and [hot reload server](https://github.com/near/bos-web-engine/blob/main/packages/hot-reload-server/README.md):
+Then we need to run the `dev:components` to start up the gateway server and [hot reload server](https://github.com/near/react-on-chain/blob/main/packages/hot-reload-server/README.md):
 
 ```
 SOURCE_PATH=near-roc-components/src pnpm dev:components
@@ -54,7 +56,7 @@ This should result in your local gateway running at `http://localhost:3000` and 
 
 ## Troubleshooting
 
-If you're having trouble getting `dev:components` to run inside of the `bos-web-engine` folder, please check out the [Hot Reload Troubleshooting](https://github.com/near/bos-web-engine/blob/main/packages/hot-reload-server/README.md#troubleshooting) section.
+If you're having trouble getting `dev:components` to run inside of the `react-on-chain` folder, please check out the [Hot Reload Troubleshooting](https://github.com/near/react-on-chain/blob/main/packages/hot-reload-server/README.md#troubleshooting) section.
 
 If you're seeing an `EADDRINUSE: address already in use` error, you can try quitting all `node` processes and attempt running the `dev` and `dev:components` commands again:
 
