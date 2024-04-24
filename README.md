@@ -24,16 +24,13 @@ pnpm dev
 
 This will kick off a [bos-loader](https://github.com/near/bos-loader) command to serve components locally for the official `near` account.
 
-**3.** Clone the RoC gateway project and get it up and running locally:
+**3.** Clone the RoC gateway project and get it up and running locally (if you already have the repo cloned, please make sure you `git pull` the latest from `main`):
 
 ```bash
 cd ~/wherever
 git clone git@github.com:near/react-on-chain.git
 cd react-on-chain
 pnpm i
-pnpm turbo run build --filter=ui --filter=social-db 
-pnpm turbo run build --filter=application
-pnpm build
 ```
 
 Then we need to run the `dev:components` to start up the gateway server and [hot reload server](https://github.com/near/react-on-chain/blob/main/packages/hot-reload-server/README.md):
@@ -43,6 +40,8 @@ SOURCE_PATH=near-roc-components/src pnpm dev:components
 ```
 
 This should result in your local gateway running at `http://localhost:3000` and the hot reload server running at `ws://localhost:4000`.
+
+_NOTE: You'll probably see a TypeScript error in the build log for `wallet-selector-control`, but you can safely ignore this. Look at [this PR](https://github.com/near/react-on-chain/pull/426) for more context if you're curious._
 
 **4.** Open up the local gateway in your browser: `localhost:3000`. In the bottom right of your screen, click on the `Dev Tools` tab to expand the drawer. Click on the `Flags` tab and enter the `bos-loader URL` value that was output earlier from `bos-loader` - which should be: `http://localhost:3030`. Also, enter the `Hot Reload URL` value - which should be: `ws://localhost:4000`. Finally, click `Save URL` on both inputs.
 
